@@ -1,0 +1,19 @@
+{
+  "name": "ngPosty",
+  "version": "0.1.0",
+  "description": "Full and partial UK post code API using Nominatim and Zoopla written in Angular.",
+  "main": "module/ngPosty.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Wildhoney/ngPosty.git"
+  },
+  "author": "Adam Timberlake <adam.timberlake@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wildhoney/ngPosty/issues"
+  },
+  "homepage": "https://github.com/Wildhoney/ngPosty"
+}
