@@ -3,8 +3,20 @@
 <head>
     <title>ngPosty Example</title>
     <link type="text/css" rel="stylesheet" href="css/default.css" />
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="js/Application.js"></script>
+    <script type="text/javascript" src="js/Controller.js"></script>
 </head>
-<body>
+<body ng-app="postyApp">
+
+    <form ng-controller="PostyController">
+        <input class="text" placeholder="Find a full/partial post code..." type="text" id="postCode" ng-model="postCode" />
+        <a ng-click="find(postCode)">Find &raquo;</a>
+
+        <p class="result" ng-show="hasResult()">
+            Post Code "{{postCode}}" resolves to {{result.latitude}}, {{result.longitude}}!
+        </p>
+    </form>
 
 </body>
 </html>

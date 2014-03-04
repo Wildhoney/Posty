@@ -1,4 +1,40 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Tahoma, Helvetica;
+}
+
+body {
+    padding: 20px;
+}
+
+label {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+input.text {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+    width: 250px;
+    float: left;
+}
+
+a {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-left: 2px;
+    height: 32px;
+    padding: 0 10px;
+    float: left;
+    line-height: 32px;
+}
+
+p.result {
+    clear: both;
+    overflow: hidden;
+    margin-top: 10px;
+    float: left;
 }
