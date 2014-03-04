@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Wildhoney/ngPosty/issues"
   },
-  "homepage": "https://github.com/Wildhoney/ngPosty"
+  "homepage": "https://github.com/Wildhoney/ngPosty",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.4.0"
+  }
 }
