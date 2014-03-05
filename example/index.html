@@ -10,7 +10,9 @@
 <body ng-app="postyApp">
 
     <form ng-controller="PostyController">
-        <input class="text" placeholder="Find a full/partial post code..." type="text" id="postCode" ng-model="postCode" />
+        <input class="text" placeholder="Find a full/partial post code..." type="text" id="postCode"
+               ng-model="postCode"
+               ng-change="result = {}" />
         <a ng-click="find(postCode)">Find &raquo;</a>
 
         <p class="result" ng-show="hasResult()">

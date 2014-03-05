@@ -43,5 +43,6 @@ class Posty {
 
 }
 
-$posty = new Posty();
-echo json_encode($posty->getLatLng('NG10'));
+$posty    = new Posty();
+$postCode = urlencode($_GET['postCode']);
+echo json_encode($posty->getLatLng($postCode));
