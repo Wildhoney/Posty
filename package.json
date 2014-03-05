@@ -1,6 +1,6 @@
 {
   "name": "posty",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Full and partial UK post code API using Zoopla written in Angular.",
   "main": "module/ngPosty.js",
   "scripts": {
