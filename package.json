@@ -1,7 +1,7 @@
 {
-  "name": "ngPosty",
+  "name": "posty",
   "version": "0.1.0",
-  "description": "Full and partial UK post code API using Nominatim and Zoopla written in Angular.",
+  "description": "Full and partial UK post code API using Zoopla written in Angular.",
   "main": "module/ngPosty.js",
   "scripts": {
     "test": "grunt test"
