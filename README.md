@@ -5,6 +5,8 @@ Posty
 &nbsp;
 <img src="https://badge.fury.io/bo/posty.png" />
 
+**Demo:** http://wildhoney.io/posty/example
+
 Full and partial UK post code API using Zoopla written in PHP, Python, and Ruby. Example has been written in Angular, and uses the PHP version by default.
 
 Install with the lovely Bower: `bower install posty`.
