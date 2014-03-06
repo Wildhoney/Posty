@@ -25,6 +25,20 @@ class Posty {
     const NOMINATIM_API_URL = 'http://nominatim.openstreetmap.org/search?format=json&limit=5&q=%s&addressdetails=1';
 
     /**
+     * @property $_cache
+     * @type string
+     * @private
+     */
+    private $_cache;
+
+    /**
+     * @property $_cacheDocument
+     * @type string
+     * @private
+     */
+    private $_cacheDocument;
+
+    /**
      * @method getLatLng
      * @param string $postCode
      * @return string
@@ -32,9 +46,14 @@ class Posty {
     public function getLatLng($postCode) {
 
         // Remove all of the whitespace, and limit to 7 characters.
-        $postCode = str_replace(' ', '', $postCode);
+        $postCode = str_replace(' ', '', strtolower(urldecode($postCode)));
         $postCode = substr($postCode, 0, 7);
         $latLng = null;
+
+        if (isset($this->_cache->{$postCode})) {
+            // Use the cached version if it's there.
+            return $this->_cache->{$postCode};
+        }
 
         if (strlen($postCode) <= 4) {
             // Use Zoopla if we only have a partial post code.
@@ -46,7 +65,38 @@ class Posty {
             $latLng = $this->_fromNominatim($postCode);
         }
 
+        // Save to the cache document!
+        $this->_saveCache($postCode, $latLng);
+
         return $latLng;
+
+    }
+
+    /**
+     * @method setCache
+     * @param string $document
+     * @return void
+     */
+    public function setCache($document) {
+        $data = file_get_contents($document);
+        $this->_cache = json_decode($data) ?: new stdClass();
+        $this->_cacheDocument = $document;
+    }
+
+    /**
+     * @method _saveCache
+     * @param string $postCode
+     * @param array $latLng
+     * @return void
+     */
+    private function _saveCache($postCode, $latLng) {
+
+        $this->_cache->$postCode = $latLng;
+
+        if (is_writable($this->_cacheDocument)) {
+            // Attempt to write to the cache document if it's writable.
+            file_put_contents($this->_cacheDocument, json_encode($this->_cache));
+        }
 
     }
 
@@ -103,6 +153,8 @@ class Posty {
 
 }
 
+ini_set('display_errors', true);
 $posty = new Posty();
+$posty->setCache(realpath('../../cache/posty.json'));
 $postCode = urlencode($_GET['postCode']);
 echo json_encode($posty->getLatLng($postCode));
