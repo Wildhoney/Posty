@@ -1,21 +1,20 @@
 {
   "name": "posty",
-  "version": "0.1.2",
-  "description": "Full and partial UK post code API using Zoopla written in Angular.",
-  "main": "module/ngPosty.js",
+  "version": "0.1.3",
+  "description": "Full and partial UK post code API using Nominatim and Zoopla written in Angular.",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Wildhoney/ngPosty.git"
+    "url": "git://github.com/Wildhoney/Posty.git"
   },
   "author": "Adam Timberlake <adam.timberlake@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Wildhoney/ngPosty/issues"
+    "url": "https://github.com/Wildhoney/Posty/issues"
   },
-  "homepage": "https://github.com/Wildhoney/ngPosty",
+  "homepage": "https://github.com/Wildhoney/Posty",
   "dependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",

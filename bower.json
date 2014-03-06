@@ -1,12 +1,11 @@
 {
   "name": "Posty",
-  "version": "0.1.2",
-  "homepage": "https://github.com/Wildhoney/ngPosty",
+  "version": "0.1.3",
+  "homepage": "https://github.com/Wildhoney/Posty",
   "authors": [
     "Adam Timberlake <adam.timberlake@gmail.com>"
   ],
   "description": "Full and partial UK post code API using Nominatim and Zoopla written in Angular.",
-  "main": "module/ngPosty.js",
   "license": "MIT",
   "ignore": [
     "**/.*",
