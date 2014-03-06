@@ -1,7 +1,7 @@
 Posty
 ========
 
-<iframe src="//benschwarz.github.io/bower-badges/embed.html?pkgname=posty" width="160" height="32" allowtransparency="true" frameborder="0" scrolling="0"></iframe>
+<img src="https://badge.fury.io/bo/posty.png" />
 
 Full and partial UK post code API using Zoopla written in PHP, Python, and Ruby. Example has been written in Angular, and uses the PHP version by default.
 
