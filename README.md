@@ -1,6 +1,8 @@
 Posty
 ========
 
+<img src="https://badge.fury.io/js/posty.png" />
+&nbsp;
 <img src="https://badge.fury.io/bo/posty.png" />
 
 Full and partial UK post code API using Zoopla written in PHP, Python, and Ruby. Example has been written in Angular, and uses the PHP version by default.
