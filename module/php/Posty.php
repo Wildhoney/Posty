@@ -153,7 +153,6 @@ class Posty {
 
 }
 
-ini_set('display_errors', true);
 $posty = new Posty();
 $posty->setCache(realpath('../../cache/posty.json'));
 $postCode = urlencode($_GET['postCode']);
