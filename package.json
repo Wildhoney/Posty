@@ -1,6 +1,6 @@
 {
   "name": "posty",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Full and partial UK post code API using Nominatim and Zoopla written in Angular.",
   "scripts": {
     "test": "grunt test"
