@@ -25,6 +25,12 @@ class Posty {
     const NOMINATIM_API_URL = 'http://nominatim.openstreetmap.org/search?format=json&limit=5&q=%s&addressdetails=1';
 
     /**
+     * @constant UKPOSTCODES_API_URL
+     * @type string
+     */
+    const UKPOSTCODES_API_URL = 'http://uk-postcodes.com/postcode/%s.json';
+
+    /**
      * @property $_cache
      * @type string
      * @private
@@ -61,14 +67,38 @@ class Posty {
         }
 
         if (!$latLng) {
-            // Otherwise we'll use Nominatim.
-            $latLng = $this->_fromNominatim($postCode);
+
+            // Otherwise we'll use UKPostCodes.com, and fall back to Nominatim.
+            $latLng = $this->_fromUKPostCodes($postCode);
+
+            if (!$latLng) {
+                $latLng = $this->_fromNominatim($postCode);
+            }
+
         }
 
         // Save to the cache document!
         $this->_saveCache($postCode, $latLng);
 
         return $latLng;
+
+    }
+
+    /**
+     * @method _fromUKPostCodes
+     * @param string $postCode
+     * @return array|null
+     */
+    private function _fromUKPostCodes($postCode) {
+
+        $url = sprintf(self::UKPOSTCODES_API_URL, $postCode);
+        $data = json_decode(file_get_contents($url));
+
+        if ($data->geo->lat && $data->geo->lng) {
+            return array('latitude' => $data->geo->lat, 'longitude' => $data->geo->lng);
+        }
+
+        return null;
 
     }
 
